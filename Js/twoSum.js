@@ -26,4 +26,5 @@ var twoSum = function(nums, target) {
     return 'no such pair';
     
 };
-console.log(twoSum([2,6,7,5,4, 0, 1,3], 4));
+//console.log(twoSum([2,6,7,5,4, 0, 1,3], 4));
+console.log(twoSum([4, -16, 43, 4, 7, -36, 18], -18));
