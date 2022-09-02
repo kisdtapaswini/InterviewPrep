@@ -1,17 +1,29 @@
-function binarySearch(arr, x){
-    let min = 0;
-    let max = arr.length - 1;
-    while(min <= max){
-        mid = (min+max)/2;
-        if(mid == x){
-            return mid;
-        }
-        if(mid < x){
-            min = mid+1;
-        }
-        if(mid > x){
-            max = mid-1;
-        }
+// Binary Search with Recursion
+
+function binarySearch(arr, num, low, high){
+    let mid = Math.floor((low+high)/2);
+    if(num === arr[mid]){
+        return mid
+    }else if(num > arr[mid]){
+        return binarySearch(arr, num, mid+1, high);
+    }else{
+        return binarySearch(arr, num, 0, mid-1)
     }
 }
-console.log(binarySearch([2,3,4,10,50], 10));
+// console.log(binarySearch([1,4,6,7,11,15,25], 11, 0, 6));
+
+// Binary Search with Recursion
+function binarySearch(arr, num, low, high){
+    while(low <= high){
+    let mid = Math.floor((low+high)/2);
+    if(num === arr[mid]){
+        return mid;
+    }else if(num > arr[mid]){
+        low = mid+1;
+    }else{
+        high = mid-1;
+    }
+    }
+    return 'nt found';
+}
+console.log(binarySearch([1,4,6,7,11,15,25], 12, 0, 6));
