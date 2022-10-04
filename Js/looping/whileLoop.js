@@ -115,3 +115,14 @@
 /**
  * Print factorial of a user input number
  */
+function printFactorial(num) {
+    let i = 1;
+    let factorial = 1;
+    while (i <= num) {
+        if (num % i === 0) {
+            console.log(i);
+        }
+        i++;
+    }
+}
+printFactorial(12);
