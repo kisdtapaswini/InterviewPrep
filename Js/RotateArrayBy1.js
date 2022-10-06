@@ -8,8 +8,6 @@ function rotateArrBy1(arr, n, d){
         arr[n-1]= first;
         j++;
     }
-
-
     console.log(arr);
 }
 rotateArrBy1([1, 3, 4, 2], 4, 3);

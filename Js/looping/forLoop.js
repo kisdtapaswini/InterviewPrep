@@ -157,4 +157,69 @@ function printStartPattern(N) {
         console.log(str);
     }
 }
-printStartPattern(3);
+//printStartPattern(3);
+
+/**
+ *   Print cross pattern
+ */
+//  *   *
+//  * * 
+//   *
+//  * *
+// *   *
+function printCrossPattern(N) {
+    for(let i = 0; i < N; i++) {
+        let str = '';
+        for (let j = 0; j < N; j++) {
+            if(i === j || (i+j ===4)){
+                str += "*";
+            }else {
+                str +=" "
+
+            }
+        }
+        console.log(str);
+    }
+
+}
+// printCrossPattern(5);
+
+function printNPattern(N) {
+    for(let i = 0; i < N; i++) {
+        let str = '';
+        for (let j = 0; j < N; j++) {
+            if( j ===0 || j ==N-1 || i === j){
+                str += "*";
+            }else {
+                str +=" "
+
+            }
+        }
+        console.log(str);
+    }
+
+}
+//printNPattern(7);
+
+function printSwastikPattern(N) {
+    for(let i = 0; i < N; i++) {
+        let str = '';
+        for (let j = 0; j < N; j++) {
+            if( i === parseInt(N/2)  
+            || j === parseInt(N/2) ||
+            (i <=parseInt(N/2) && j === 0) ||
+            (i ===N-1 && j <=parseInt(N/2)) ||
+            (i > parseInt(N/2) && j === N-1) ||
+            (i === 0 && j > parseInt(N/2)))
+            {
+                str += "* ";
+            }else {
+                str +="  ";
+
+            }
+        }
+        console.log(str);
+    }
+
+}
+printSwastikPattern(5);
