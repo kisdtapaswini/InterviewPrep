@@ -1,0 +1,9 @@
+1. srcset
+Here is a good article on the srcset attribute and how to use it. srcet allows you to declare a set of images to be displayed on different viewport sizes. You just have to save and image at different resolutions e.g. banner-phone-HD.jpeg would be the highest resolution.
+
+Exmaple:
+<img alt="my awesome image"
+src="banner.jpeg"
+srcset="banner-HD.jpeg 2x, banner-phone.jpeg 640w, banner-phone-HD.jpeg 640w 2x">
+
+2. 
