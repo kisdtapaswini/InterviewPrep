@@ -222,4 +222,76 @@ function printSwastikPattern(N) {
     }
 
 }
-printSwastikPattern(5);
+//printSwastikPattern(5);
+
+
+/**
+ * Easy Pattern practice
+ */
+function easyPattern1(n){
+    for(let i = 1; i<=n ; i++){
+        for (let j = 1; j<=i; j++){
+            if(j&2 ===0)
+            process.stdout.write(" ");
+        }
+        console.log();
+
+    }
+
+}
+//console.log(easyPattern1(5));
+module.exports = {
+    solve: function(){
+        this.print(5);
+    },
+    print: function(n) {
+        if(n <=0){
+            return;
+        }
+        console.log(n);
+        this.print(n-1);
+    }
+}
+//module.exports.solve();
+
+function maxSumSubArray(arr, B) {
+        let startId = 0
+        let MaxSum = 0;
+        let sum = 0;
+        for(let endIdx = 0; endIdx < arr.length; endIdx++){
+            sum += arr[endIdx];
+            while(sum > B){
+                sum = sum - arr[startId++];
+            }
+            MaxSum = Math.max(MaxSum, sum);
+        }
+        return MaxSum;
+}
+// console.log(maxSumSubArray([2,2,2], 1));
+
+
+function maxOccuranceCount(arr, B) {
+    let startId = 0
+    let count = 0;
+    let str = '';
+    for(let endIdx = 0; endIdx < arr.length; endIdx++){
+        windowSize = (endIdx - startId) +1;
+        str += arr[endIdx];
+        if(windowSize === B.length){
+            if(str === B){
+                count++;
+                startId = endIdx -1
+            }else{
+                startId++;
+            }
+        }
+
+    }
+    return count;
+}
+ console.log(maxOccuranceCount('abobc', 'bob'));
+
+
+
+
+
