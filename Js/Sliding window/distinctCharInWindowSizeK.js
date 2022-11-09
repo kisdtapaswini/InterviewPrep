@@ -2,7 +2,7 @@ function distinctChar (str, k) {
     let startIdx = 0;
     let mp = new Map();
     let i;
-    let j
+    let j;
 
     for(let endIdx = 0; endIdx < str.length; endIdx++) {
         if(mp.has(str[endIdx])) {
@@ -18,7 +18,12 @@ function distinctChar (str, k) {
                 j = endIdx;
                 return [i, j];
             }else{
-                mp.delete(str[startIdx]);
+                let elem = mp.get(str[startIdx]);
+                if(elem === 1){
+                  mp.delete(str[startIdx]);
+                }else{
+                  mp.set(str[startIdx], elem-1);
+                }
             }
             startIdx ++;
         }
@@ -36,4 +41,4 @@ function checkIfMapHasRepeatElem(mp){
       }
       return true;
 }
-console.log(distinctChar('xyyzxyyz', 3));
+console.log(distinctChar('yzxyxyyyz', 3));

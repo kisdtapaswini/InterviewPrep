@@ -32,6 +32,7 @@ class newArray{
       //  this.length--;
     }
     size(){
+        'debug '
         return Object.keys(arr1.array).length;
     }
 }

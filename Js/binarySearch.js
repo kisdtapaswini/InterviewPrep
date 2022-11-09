@@ -26,4 +26,4 @@ function binarySearch(arr, num, low, high){
     }
     return 'nt found';
 }
-console.log(binarySearch([1,4,6,7,11,15,25], 12, 0, 6));
+console.log(binarySearch([1,2,3,4,5,6,7,8,9], 5, 0, 9));
