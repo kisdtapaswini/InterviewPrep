@@ -1,5 +1,7 @@
+/**
+ * Product array
+ */
 function prodArr(A){
-    
     let n = A.length;
     let leftProdArr = [1];
     let rightProdArr = [];
@@ -7,7 +9,6 @@ function prodArr(A){
     for(let i = 1; i <n; i++){
         leftProdArr[i] = leftProdArr[i-1]*A[i-1]
     }
-
     for(let i = n-2; i >= 0; i--){
         rightProdArr[i] = rightProdArr[i+1]*A[i+1]
     }

@@ -1,0 +1,17 @@
+A. A subarray is -:
+            1. continous part of an array
+            2. Single element/ complete array
+            3. Empty array is not a sub array
+            4. [i j] subarray len is j-i+1
+            5. Always in subarray [i,j], j> i.
+B. ar[N] = a0, a1, a2, a3, ... ... .. an-1;
+Syb array are [0,0]                                 [1,1]
+               [0,1]                                [1,2]
+               .                                      .
+               .                                       .
+               .                                       .
+               .
+                [0, n-1]                            [1, n-1]
+                # N numbers of subarrays            # n-1 no of subarrays
+Likewise total no of subarrays is going to be = n+(n-1)+(n-2)+(n-3)+... ... +1
+                                              = n(n+1)/2
