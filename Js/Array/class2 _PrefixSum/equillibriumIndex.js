@@ -46,7 +46,6 @@ function equillibriumIndex(arr){
     let count = 0;
     let n = A.length;
     let pfSum = new Array(n);
-    let eqIdx = -1;
     pfSum[0] = A[0];
     for(let i = 1; i < n ; i++){
         pfSum[i] = pfSum[i-1] + A[i];
@@ -58,10 +57,43 @@ function equillibriumIndex(arr){
         }
         let rSum = pfSum[n-1] - pfSum[i];
         if(lSum === rSum){
-            console.log(i);
+            count++;
+          //  console.log(i);
         }
     }
     
     return count;
  }
- equillibriumIndex([-7, 1, 5, 2, -4, 3, 0]);
+ //console.log(equillibriumIndex([-7, 1, 5, 2, -4, 3, 0]));
+
+ //console.log(equillibriumIndex([-3, 2, 4, -1]));
+
+ /**
+  * Using carry forward
+  */
+  function equillibriumIndexCarryForward(A){
+    let count = 0;
+    let n = A.length;
+    let lSum = 0;
+    let rSum = 0
+    let totalSum = 0;
+    for(let i = 0; i < n ; i++){
+        totalSum += A[i];
+    }
+  //  console.log(totalSum);
+
+    for(let i = 1; i < n ; i++){
+        lSum += A[i-1];
+        rSum = totalSum - (A[i] + lSum);
+        console.log(lSum);
+        console.log(rSum);
+
+        if(lSum === rSum){
+            count++;
+            //console.log(i);
+        }
+    }
+    
+    return count;
+ }
+ console.log(equillibriumIndexCarryForward([-3, 2, 4, -1]));

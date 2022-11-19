@@ -92,7 +92,8 @@ function sumOfAllSubArrayPrefixSum(arr){
 
 
 /**
- * 4. Given N array elements, print all subarray sums starting at index 0 and also print the total sumall subarrays sum
+ * 4. Given N array elements, print all subarray sums starting at index 0 and also print the total sumall 
+ * subarrays sum
  * // Time complexity = O(n^2)
 // Space complexity = O(1)
  */
@@ -116,7 +117,7 @@ function sumOfAllSubArrayPrefixSum(arr){
 sumOfAllSubArrayCarryForward([15, 8, 16]);
 
 /**
- * 5. Final and the best solution 
+ * 5. Final and the best solution using contribution technique
  * Given an array arr[n], return the sum of all subarrays sum(not each subarray)
  */
  function sumOfAllSubArrayBestSolution(arr){

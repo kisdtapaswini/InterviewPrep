@@ -23,22 +23,64 @@ function countPairs(str){
 //console.log(countPairs("abcgag"));
 
 /**
+ * Using prefix array.
+ */
+
+ function countPairsUsingPrefixSum(str){
+    let pfCountA = [];
+    let pairCount = [];
+    pfCountA[0] = 0;
+    for(let i = 1; i < str.length ; i++){
+        if(str[i] === 'a'){
+            pfCountA[i] = pfCountA[i-1] +1;
+        }else{
+            pfCountA[i] = pfCountA[i-1];  
+        }
+    }
+   // console.log(pfCountA);
+
+    pairCount[0] = pfCountA[0];
+
+    for(let i = 1; i < str.length ; i++){
+        if(str[i] === 'g'){
+            pairCount[i] = pairCount[i-1] + pfCountA[i-1];
+  
+        }else{
+            pairCount[i] =  pairCount[i-1];
+        }
+    }
+   // console.log(pairCount[pairCount.length-1]);
+    return pairCount[pairCount.length-1];
+}
+console.log(countPairsUsingPrefixSum("bcaggaag"));
+
+/**
  * Optimised solution. Idea-1
  * Count the number of 'g'from right hand side and carry it towards the index zero
  * // Time complexity - O(n)
 // Space complexity - O(1)
  */
 function countPairsOptimised(str){
-    let countG = 0;
+    // let countG = 0;
+    // let agCount = 0;
+//    for(let i = str.length-1; i >=0 ; i--){
+//         if(str[i] === 'g'){
+//             countG++;  
+//         }
+//         if(str[i] === 'a'){
+//             agCount += countG;
+//         }
+
+//     }
+    let countA = 0;
     let agCount = 0;
-    for(let i = str.length-1; i >=0 ; i--){
+    for(let i = 0; i <= str.length ; i++){
         if(str[i] === 'g'){
-            countG++;  
+            agCount++;  
         }
         if(str[i] === 'a'){
-            agCount += countG;
+            countA += countA;
         }
-
     }
     return agCount;
 
@@ -64,4 +106,4 @@ function countPairsOptimised(str){
     return ansCount;
 
 }
-console.log(countPairsOptimised2("adgagagfg"));
+//console.log(countPairsOptimised2("adgagagfg"));
