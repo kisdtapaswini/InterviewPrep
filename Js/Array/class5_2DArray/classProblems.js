@@ -111,7 +111,7 @@ function printRightDiogonalMat(mat){
         console.log(arr);
     }
 }
-console.log(transposeMat([[1, 2, 3],[4, 5, 6],[7, 8, 9]]));
+//console.log(transposeMat([[1, 2, 3],[4, 5, 6],[7, 8, 9]]));
 
 function antiDiagonals(mat){
     let resulrArr = new Array(mat.length-1);
@@ -145,3 +145,51 @@ function antiDiagonals(mat){
 // console.log(antiDiagonals([[1,2,3],
 //                            [4,5,6,],
 //                            [7,8,9]]));
+
+/**
+ * Given a mat [n][n], print the boundary elements in clockwise direction
+ */
+
+function printClockWise(mat){
+    let n = mat[0].length;
+    let str = '';
+    let i = 0;
+    let j = 0;
+    while(n > 1){
+
+    for(let k = 1; k <=n-1; k++){
+        str += mat[i][j]+" ";
+        j++;
+    }
+    //  i = 0;
+    //  j = n-1;
+    for(let k = 1; k <= n-1; k++){
+        str += mat[i][j]+" ";
+        i++;
+    }
+    //  i = n-1;
+    //  j = n-1;
+
+    for(let k = 1; k <= n-1; k++){
+        str += mat[i][j]+" ";
+        j--;
+     }
+    // i = n-1;
+    // j = 0;
+    for(let k = 1; k <=n-1; k++){
+        str += mat[i][j]+" ";
+        i--;
+    }
+        i++;
+        j++;
+        n = n-2
+    }
+    if(n === 1){
+       str += mat[i][j]; 
+    }
+    console.log(str);
+
+}
+console.log(printClockWise([[1,2,3],
+                            [4,5,6,],
+                            [7,8,9]]));
