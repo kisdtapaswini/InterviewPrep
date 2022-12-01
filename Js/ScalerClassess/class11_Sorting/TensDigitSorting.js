@@ -7,7 +7,7 @@ function TensDigitSorting(A){
          'digit': findDigits(i, A)
          }; 
     }
-console.log(tensArr);
+    console.log(tensArr);
     tensArr.sort((e1, e2) => {
         if(e1.digit === e2.digit){
           return e1.val < e2.val ? -1 : 1;
