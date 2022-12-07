@@ -17,7 +17,7 @@ var twoSum = function(nums, target) {
         
         let diff = target - nums[i];
         if(set.has(diff)){
-            return [nums[i], diff];
+            return 1;
         }else{
             set.add(nums[i]);
 
@@ -27,4 +27,4 @@ var twoSum = function(nums, target) {
     
 };
 //console.log(twoSum([2,6,7,5,4, 0, 1,3], 4));
-console.log(twoSum([4, -16, 43, 4, 7, -36, 18], -18));
+console.log(twoSum([ 23, 52, 95, 29, 9, 47, 49, 55, 96, 4 ], 100));

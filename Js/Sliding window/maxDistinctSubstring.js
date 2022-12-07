@@ -13,4 +13,4 @@ function maxDistinctSubString(str){
     } 
     return len;
 }
-console.log(maxDistinctSubString("bddaab"));
+console.log(maxDistinctSubString("abcabcbb"));

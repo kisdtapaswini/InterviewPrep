@@ -45,12 +45,13 @@
         METHODS:--
         1. new Set([iterable]) – creates the set, and if an iterable object is provided (usually an array),
          copies values from it into the set.
-        2.set.add(value) – adds a value, returns the set itself.(The main feature is that repeated calls of set.add(value) with the same value don’t do anything.
+        2.set.add(value) – adds a value, returns the set itself.(The main feature is that repeated calls of set.add(value)
+         with the same value don’t do anything.
         That’s the reason why each value appears in a Set only once.)
         3.set.delete(value) – removes the value, returns true if value existed at the moment of the call, otherwise false.
         4.set.has(value) – returns true if the value exists in the set, otherwise false.
         5.set.clear() – removes everything from the set.
-        6. set.size – is the elements count.
+        6.set.size – is the elements count.
 
     =------------Iteration over Map ------
         We can loop over a set either with for..of or using forEach:

@@ -22,8 +22,8 @@ function findCommon(a, b){
     return cmn;
 }
 //console.log(longestCmnPrefix(["abcdefgh", "abcdefghijk", "abcefgh"]));
-console.log(longestCmnPrefix([ "aaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaa", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaa", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" ]
-));
+//console.log(longestCmnPrefix([ "aaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaa", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaa", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" ]
+//));
 
 /**
  * 
@@ -46,16 +46,21 @@ function isAlNum(A){
 
 // Q3. String operations
 function stringOp(A){
-    let str = A+A;
-    for(let i = 0; i < str.length-1; i++){
-        if((str[i] >= 'A' && str[i] <='Z')){
-            //A[i] = A[i+1];
-            str.replace(str[i], '');
-         //   console.log(A.replace('A[i]', ''));
-
+  //  let n = A.length;
+  //  A = A.replace( /[A-Z]/g, '' );
+   // A = A.replace( /[A-Z]/g, '' );
+    let ans = '';
+    for(let i = 0; i < A.length; i++){
+        if(!(A[i].charCodeAt(0) >= 65 && A[i].charCodeAt(0) <= 90)){
+            ans += A[i];
         }
-       // str += A[i];
     }
-    return str;
+    console.log(ans);
+    for(let i = 0; i < ans.length; i++){
+        if(ans[i] === 'a' || ans[i] === 'e' || ans[i] === 'i' || ans[i] === 'o' || ans[i] === 'u' ){
+            ans = ans.replace(ans[i], '#');
+        }
+    }
+    return ans+ans;
 }
-//console.log(stringOp("AbcaZeoB"));
+console.log(stringOp("hgUe"));

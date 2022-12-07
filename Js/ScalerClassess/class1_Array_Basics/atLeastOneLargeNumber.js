@@ -1,5 +1,6 @@
 /**
- * Given N elements of Array. Count the numbe rof elements having atleast one element greater than it self
+ * Given N elements of Array. Count the number of elements having atleast one element greater
+ *  than it self
  * Given arr [] = [-3, 2, 6, 8, 4, 8, 5];
  * o/p :  5;
  * Time Complexity: O(n2)
