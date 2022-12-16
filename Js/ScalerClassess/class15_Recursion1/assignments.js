@@ -1,13 +1,19 @@
 //Q4. Print 1 to A function
 function print(A){
-    if(A < 0){
+    if(A < 1 ){
         return 1+" ";
     }
-    print(A-1);
     process.stdout.write(A+ " ");
+    print(A-1);
 
 }
-//console.log(print(9));
+//print(9);
+// function callPrint(num){
+//     print(num);
+//     console.log();
+
+// }
+// console.log(callPrint(9));
 
 //printNos(1, 100);
      
@@ -73,4 +79,18 @@ function callRecFunction(str){
 
     return checkPalindromeRec(str, 0, n - 1);
 }
-console.log(callRecFunction('maddam'));
+//console.log(callRecFunction('maddam'));
+
+//Q1. Print reverse string
+function reverseString(s){
+      //  process.stdout.write(s[s.length-1]);
+        if(s.length === 0){
+            return;
+        }
+        process.stdout.write(s[s.length-1]);
+        return reverseString(s.substring(0, s.length-1));
+}
+function print(str){
+    reverseString(str);
+}
+console.log(reverseString("cool"));
