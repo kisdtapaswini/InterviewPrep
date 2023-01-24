@@ -19,10 +19,8 @@ class LinkedList {
         }else{
             newNode.next = this.head;
             this.head = newNode;
-
         }
         this.size++;
-
     }
 
     insertAnywhere(val, index){
@@ -55,7 +53,7 @@ class LinkedList {
 
     deleteBthNode(index){
         let curr = this.head;
-        let prev = curr;
+        let prev = null;
         let count = 0; 
         if(index === 0){
             this.head = curr.next;
@@ -100,18 +98,16 @@ class LinkedList {
         let curr = this.head;
         this.printReverse(curr, this.head);
     }
-    
-    
 }
 let ll1 = new LinkedList();
 ll1.insertAtFirst(1);
- ll1.insertAtEnd(3);
+ //ll1.insertAtEnd(3);
 
  ll1.insertAnywhere(2,1);
- ll1.insertAnywhere(4,3);
+ ll1.insertAnywhere(4,2);
 
- ll1.insertAnywhere(5,5);
- ll1.insertAnywhere(6,15);
+ //ll1.insertAnywhere(5,5);
+ //ll1.insertAnywhere(6,15);
  //ll1.print();
 
 //ll1.deleteBthNode(1);

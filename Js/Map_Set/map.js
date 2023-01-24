@@ -1,6 +1,7 @@
 /**
  *   ----------------------- MAP  starts-------------------
- *  Map is a collection of keyed data items, just like an Object. But the main difference is that Map allows keys of any type.
+ * Map is a collection of keyed data items, just like an Object. 
+ * But the main difference is that Map allows keys of any type.
  * 
  * METHODS:--
  *  new Map()/ new Map([iterable]) – creates the map, with optional iterable (e.g. array) of [key,value] pairs for initialization.
@@ -21,6 +22,7 @@
           map.set('1', 'str1')
         .set(1, 'num1')
         .set(true, 'bool1');
+   4. The value of an invalid key is by default 'undefined'.
 
     =------------Iteration over Map ------
     1. map.keys() – returns an iterable for keys,

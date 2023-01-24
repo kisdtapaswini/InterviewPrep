@@ -32,5 +32,28 @@ function countSubarrayWithZerSum(A){
     return ans;
 
 }
-console.log(countSubarrayWithZerSum([30, -30, 30, -30]));
+//console.log(countSubarrayWithZerSum([30, -30, 30, -30]));
 //console.log(countSubarrayWithZerSum([0]));
+//Q3. Colorful Number
+function colorfulNum(A){
+    let digitArr = [];
+    while(A != 0){
+        digitArr.push(A % 10);
+        A = Math.floor(A/10);
+    }
+    let set = new Set();
+    for(let i = 0; i < digitArr.length; i++){
+        let prod = 1;
+
+        for(let j= i; j < digitArr.length; j++){
+            prod *= digitArr[j];
+            if(set.has(prod)){
+                return 0;
+            }
+            set.add(prod);
+        }
+    }
+    return 1;
+
+}
+//console.log(colorfulNum(236));

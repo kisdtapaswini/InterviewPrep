@@ -11,7 +11,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}/Js/Array/class2/equillibriumIndex.js"
+            "program": "${workspaceFolder}/Js/ScalerClassess/class19_Tree/createTreeclass.js"
         }
     ]
 }

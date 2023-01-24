@@ -66,7 +66,7 @@ function checkPalindromeRec(str, s, e){
     if ((str.charAt(s)) != (str.charAt(e))){
         return 0;
     }
-    if (s < e + 1){
+    if (s < e ){ // if (s < e + 1){
         return checkPalindromeRec(str, s+1, e-1)
     }
     return 1;
