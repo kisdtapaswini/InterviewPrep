@@ -1,4 +1,4 @@
-// Find the smallest prime factor(SPF) of any number
+// Find the smallest allPrimeUptoMax factor(SPF) of any number
 
 function smallestSPF(n){
     let isPrimeSieve = new Array(n+1).fill(0);
@@ -20,28 +20,8 @@ function smallestSPF(n){
 }
 //console.log(smallestSPF(8));
 
+//Q1. Factorial Array
 
-//14. Longest Common Prefix
-function longestCom(strs){
-    let ans = strs[0];
-    for(let i = 1; i < strs.length; i++){
-        let j = 0;
-        let nextStr =  strs[i];
-        let contString = '';
-        while(j < Math.min(ans.length,nextStr.length)){
-            if(ans[j] === nextStr[j]){
-                contString += ans[j];
-            }else{
-                break;
-            }
-            j++;
-
-        }
-        ans = contString;
-    }
-    return ans;
-}
-//console.log(longestCom(["cir","car"]));
 
 function solve(A){
     let n = A+1;
@@ -88,5 +68,55 @@ function convertToTitle(A){
         }
     return res;
     }
-    console.log(convertToTitle(55));
+//    console.log(convertToTitle(55));
+
+//Q1. Factorial Array
+function factoArr(A){
+    A.sort((a,b)=>a-b);
+    let max = A[A.length - 1];
+    let primeArray = new Array(max + 1).fill(true);
+    primeArray[0] = primeArray[1] = false;
+    for(let i = 2; i <= max; i++){
+        if(primeArray[i]){
+            for(let j = i*i; j <= max; j+=i){
+                primeArray[j] = false;
+            }
+        }
+    }
+    let allPrimeUptoMax = [];
+    for(let i = 2; i <= max; i++){
+        if(primeArray[i]){
+            allPrimeUptoMax.push(i);
+        }
+    }
+    //console.log(allPrimeUptoMax);
+    let j = 0;
+    while(A[j] < 2) {
+        j++;
+    }
+    let ans = 0;
+    for (let i = 0; i < allPrimeUptoMax.length - 1; i++) {
+        let l = allPrimeUptoMax[i];
+        let r = allPrimeUptoMax[i + 1];
+        let primeCount = 0;
+        while (j < A.length) {
+            // if the array elem is in between two consucutive allPrimeUptoMax nums
+            if (A[j] >= l && A[j] < r) {
+                primeCount++;
+            } else {
+                break;
+            }
+            j++;
+        }
+        ans += (Math.pow(2, primeCount) - 1);
+        console.log(ans);
+
+    }
+    ans += (Math.pow(2, A.length - j)) - 1;
+    return ans % 100000007;
+}
+//console.log(factoArr([2, 3, 2, 3]));
+
+console.log(factoArr([ 2, 3, 4, 5, 6 ]));
+
 

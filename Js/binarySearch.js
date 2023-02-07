@@ -18,7 +18,8 @@ function binarySearch(arr, num, low, high){
     let mid = Math.floor((low+high)/2);
     if(num === arr[mid]){
         return mid;
-    }else if(num > arr[mid]){
+    }
+    if(num > arr[mid]){
         low = mid+1;
     }else{
         high = mid-1;
@@ -26,4 +27,5 @@ function binarySearch(arr, num, low, high){
     }
     return 'nt found';
 }
-console.log(binarySearch([1,2,3,4,5,6,7,8,9], 5, 0, 9));
+//console.log(binarySearch([1,2,3,4,5,6,7,8,9], 5, 0, 9));
+console.log(binarySearch([ 1, 3, 5, 6 ], 6));
