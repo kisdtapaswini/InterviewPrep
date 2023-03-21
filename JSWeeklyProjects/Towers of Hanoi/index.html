@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tower Of Hanoi</title>
+    <link rel="stylesheet" href="style.scss">
+</head>
+
+<body>
+    <div id="canves">
+      <div class="restart">
+        <i> class="fa fa-repeat"</i>
+        <div class="curtain">
+          <ul id="score-panel">
+            <li>
+              <i> class="fa fa-star"</i>
+            </li>
+            <li>
+              <i> class="fa fa-star"</i>
+            </li>
+            <li>
+              <i> class="fa fa-star"</i>
+            </li>
+            <li>
+              <h1>
+                <span id="moves-num"></span>
+                <span>Moves</span>
+              </h1>
+            </li>
+          </ul>
+          <ul class="tower" id = "tower-1"></ul>
+          <ul  class="tower" id = "tower-2"></ul>
+          <ul  class="tower" id = "tower-3"></ul>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>

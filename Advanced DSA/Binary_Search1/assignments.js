@@ -89,9 +89,41 @@ function binarySearchRange(arr, num, flag){
     }
     return flag ? startingIdx : endingIdx;
 }
-console.log(searchRange([ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10 ], 10));
+//console.log(searchRange([ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 8, 8, 8, 8, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10 ], 10));
 function searchRange(A, B){
     let start = binarySearchRange(A, B, true);
     let end = binarySearchRange(A, B, false);
     return [start, end];
 }
+
+let A1 =[
+    [3],
+    [29],
+    [36],
+    [63],
+    [67],
+    [72],
+    [74],
+    [78],
+    [85]
+];
+let B1 = 41;
+
+function searchMatrix(A, B){
+    let row = A.length;
+    let col = A[0].length;
+    let i = 0;
+    let j = col-1;
+    while((i >=0 && i < row) && (j >=0 && j < col)){
+        console.log(A[i][j]);
+     if(B === A[i][j]) {
+        return 1;
+     }else if(B > A[i][j]){
+        i++;
+     }else{
+        j--;
+     }
+    }
+    return 0;
+}
+console.log(searchMatrix(A1, B1));

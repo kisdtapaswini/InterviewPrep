@@ -153,4 +153,5 @@ function getminMap(mp){
     }
     return minkey;
 }
-console.log(changeChar("abcabbccd", 3));
+//console.log(changeChar("abcabbccd", 3));
+

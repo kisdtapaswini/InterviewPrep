@@ -1,0 +1,43 @@
+About JSX
+1. Simillar to HTML
+2. All parallel tags should get enclosed with a parent tag means retuen methos should have onle one tag to return.
+3. Few attributes are differnet than normal HTML, for example - class - className, for - html for
+4. In JSX we can write JS code enclosing them into a curly braces
+5. All tags should have a end closing tag
+
+--------------
+PROPS:
+1.  Props is nothing but a carrier to carry data from a parent component to child
+2.  We can pass objct, string any type
+3.  Props are readonly, we cant chnage those directly
+4.  All React components must act like pure functions with respect to their pairs.
+
+STATES:
+1.  State belongs to a component to represent component state
+2.  We use useState hook to define a state and using a function we can update any state value
+3. 
+
+API  call using react---
+1.  We can use axios js library or fetch js method to get data from server
+
+----- HOOKS:----
+1.  Hooks are nothing but functions and which allow us to get all the react class based functionalities(feature) inside
+    functional based components
+2.  Most used hooks:
+    i. useState - to update a state and sets initial value of state.
+    ii. useEffect -  componentdidMount work, we do inside useEffect
+    iii. useContext -  to make globally available to avoid Prop drilling
+    iv. useRef - keep reference is a holder of any DOM elem
+
+    it allows us to use state and othet react features without creating class
+3.  Hooks are the functions whick hook into React state and lifecycle features from function components.
+
+---- REDUX:-----
+1.  Resux helps to maintain state of a component and helps reducing prop drilling
+2.  it maintains a single global object called store to manage application's state
+3.  it helps in maintaing consistency through out the app
+    i. Actions - actiona is a plain object that describes the intention to cause change
+    ii. Reducers - A reducer is a function that determines chnages to an application's state
+
+
+pure and control component
