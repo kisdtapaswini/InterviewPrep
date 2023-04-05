@@ -1,0 +1,10 @@
+#1. Always use descriptive variable names based on the domain
+#2. Always declare variables properly
+#3. Use const for immutable values
+#4. Always use Arrow functions
+#5. Use promises instead of callbacks
+#6. Always use error handling
+#7. Always use template url
+#8. Always use linters
+#9. Use === instead of ==
+#10. Always use object Destructuring
