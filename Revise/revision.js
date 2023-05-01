@@ -36,4 +36,28 @@ function solve(A, B){
 	return A;
 }
 //console.log(solve([5, 17, 100, 11], [1, 100]));
-console.log(solve([ 3, 20, 17, 17 ], [ 5, 9, 20, 11, 6, 18, 7, 13 ]));
+//console.log(solve([ 3, 20, 17, 17 ], [ 5, 9, 20, 11, 6, 18, 7, 13 ]));
+
+let ans = (function MergeTwoSorted(A){
+	let swapCount = 0;
+	for(let i = 0; i < A.length; i++){
+		for(let j = 0; j < A.length - i; j++){
+			if(A[j] > A[j+1]){
+				swap(A, j, j+1);
+				swapCount++;
+			}
+		}
+		if(swapCount === 0){
+			break;
+		}
+	}
+	console.log(swapCount);
+	return A;
+})([9, 3, 8, ], 3);
+console.log(ans);
+
+function swap(arr, idx1, idx2){
+	let temp = arr[idx1];
+	arr[idx1] = arr[idx2];
+	arr[idx2] = temp;
+}

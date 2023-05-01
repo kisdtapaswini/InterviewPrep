@@ -9,6 +9,9 @@ class LinkedList {
     constructor() {
         this.head = null;
         this.size = 0;
+        this.head2 = null;
+        this.tail = null;
+        this.random = null;
     }
 
     insertAtFirst(val){
@@ -291,10 +294,20 @@ class LinkedList {
         this.print();
     }
 
-    removeDuplicates(){
-
+    removeDuplicatesFromSortedLL(){
+        let ptr1 = this.head;
+        let ptr2 = this.head.next;
+        while(ptr2){
+            if(ptr1.data != ptr2.data){
+                ptr1 = ptr1.next;
+            }else{
+                ptr1.next = ptr2.next;
+            }
+            ptr2 = ptr2.next;
+        }
+        return 
     }
-    craeteLoop(){
+    createLoop(){
         let curr = this.head;
         let curr1 = this.head;
         let count = 0;
@@ -380,19 +393,74 @@ class LinkedList {
         }
         console.log(curr);
     }
+
+    cloneLL(){
+        let curr = this.head;
+        let map = new Map();
+        while(curr){
+            let node = new Node(curr.data);
+            map.set(curr, node);
+            if(!this.head2){
+                this.head2 = node;
+                this.tail = node;
+            }else{
+                this.tail.next = node;
+                this.tail = this.tail.next;
+            }
+            curr = curr.next;
+        }
+        curr = this.head;
+        let curr2 = this.head2;
+        while(curr && curr2){
+            curr2.random = map.get(curr.random);
+            curr = curr.next;
+            curr2 = curr2.next;
+        }
+    }
+    printCloned(){
+        let curr = this.head2;
+        let str = '';
+        while(curr){
+            str += curr.data;
+            if(curr.next){
+                str += "->";
+            }
+            curr = curr.next
+        }
+        console.log(str);
+    }
+
+    linkWithRandom(){
+        let curr = this.head;
+        while(curr){
+            if(curr && curr.next && curr.next.next){
+                curr.random = curr.next.next;
+               // console.log(curr.random);
+            }
+            curr = curr.next;
+        }
+    }
 }
 
 let ll1 = new LinkedList();
  ll1.insertAtFirst(1);
  ll1.insertAtEnd(2);
+ ll1.insertAtEnd(2);
+ ll1.insertAtEnd(2);
  ll1.insertAtEnd(4);
  ll1.insertAtEnd(6);
  ll1.insertAtEnd(10);
-ll1.print();
+ //console.log(ll1.head);
+//  ll1.print();
+//  ll1.linkWithRandom();
 
-// ll1.craeteLoop();
+
+//  ll1.cloneLL();
+//  ll1.printCloned();
+
+// ll1.createLoop();
 // ll1.printLoop();
- ll1.getRandom();
+ //ll1.getRandom();
  //console.log(ll1.findMid());
  //ll1.reverseInBetween(1, 4);
  //ll1.print();
