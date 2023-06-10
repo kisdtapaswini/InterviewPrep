@@ -1,0 +1,26 @@
+TECHNIQUES:
+
+1. PrefixSum :
+   i) It's a technique where we precompute and store the cumulative sum of the sequence(for a given condition) of elements that allows fast sum
+   calculation of any continuous range.
+
+   ii) In prefix Array, every index i stores the sum of all elements from index 0 to the index i.
+   So to get Sum of range fromm S to E is
+   pfSum[E] - pfSum[S-1] and to get this sum we have to do only O(1) operation
+
+2. Carry Forward :
+   i)In this technique we carry some required val and move.
+
+SUBARRAYS---:
+
+i) We know that array is a contigeous memory location, simillarly xa sub-array is a contigeous part of an array,
+which may consists of any number of elements with at least one elemnt into it.
+
+ii) A complete Array is a subArray of itself.
+iii) An empty array is also a subarray but we will consider only non-empty subarrays
+
+Total number of SUBARRAYS for any given array with size N = (N*N+1)/2 ~ O(n^2)
+
+To get the all subArray the time complexity is n^2, to do any operation on each subArray(e.g sum) then agn n operation
+for eaxh subarray, which makes the overall time complexity to O(n^3)
+

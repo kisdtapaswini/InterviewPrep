@@ -72,7 +72,7 @@ function sumOfAllSubArrayPrefixSum(arr){
         }
     }
 }
-//sumOfAllSubArrayPrefixSum([2,4,1]);
+sumOfAllSubArrayPrefixSum([2,4,1]);
 
 /**
  * 3. Given N array elements, print all subarray sums starting at index 3
