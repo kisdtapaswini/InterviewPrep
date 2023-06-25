@@ -394,6 +394,7 @@ class LinkedList {
         console.log(curr);
     }
 
+<<<<<<< HEAD
     cloneLL(){
         let curr = this.head;
         let map = new Map();
@@ -439,6 +440,31 @@ class LinkedList {
             }
             curr = curr.next;
         }
+=======
+    getMid (){
+        let idx = 0;
+        let slow = this.head;
+        let fast = this.head;
+        let prev = null;
+        while(fast && fast.next){
+            idx++;
+            prev = slow;
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return idx % 2 === 0 ? [prev, 'even']: [slow, 'odd'];
+    }
+    reverse_LL(middleNode){
+        let prev = null;
+        let curr = middleNode;
+        while(curr){
+            let ahead = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = ahead;
+        }
+        return prev;
+>>>>>>> f54133556f736ac8b35ec251edd5fa4123565af3
     }
 }
 
@@ -448,6 +474,7 @@ let ll1 = new LinkedList();
  ll1.insertAtEnd(2);
  ll1.insertAtEnd(2);
  ll1.insertAtEnd(4);
+<<<<<<< HEAD
  ll1.insertAtEnd(6);
  ll1.insertAtEnd(10);
  //console.log(ll1.head);
@@ -457,11 +484,24 @@ let ll1 = new LinkedList();
 
 //  ll1.cloneLL();
 //  ll1.printCloned();
+=======
+ //ll1.insertAtEnd(10);
+ll1.print();
+let midNode = ll1.getMid();
+
+let reverseHead = ll1.reverse_LL(midNode[0].next);
+midNode[0].next = reverseHead;
+ll1.print();
+>>>>>>> f54133556f736ac8b35ec251edd5fa4123565af3
 
 // ll1.createLoop();
 // ll1.printLoop();
  //ll1.getRandom();
+<<<<<<< HEAD
  //console.log(ll1.findMid());
+=======
+ //
+>>>>>>> f54133556f736ac8b35ec251edd5fa4123565af3
  //ll1.reverseInBetween(1, 4);
  //ll1.print();
  //console.log(ll1.checkIfPalindrome());
