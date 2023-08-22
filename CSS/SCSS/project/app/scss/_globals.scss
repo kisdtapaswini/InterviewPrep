@@ -1,0 +1,67 @@
+html { 
+//font-size: 62.5%;
+box-sizing: border-box;
+}
+ *, *::before, *::after{
+    box-sizing: inherit;
+ }
+
+ body{
+    margin: 0;
+    padding:0;
+    line-height: 1.3px;
+    font-family: 'Roboto', sans-serif;
+    font-size: $font-md;
+    color: $lightGrayishBlue; // most aftem used color
+    font-weight: 300;
+   }
+   a, a:visited, a:hover{
+      text-decoration: none;
+   }
+   .flex{
+      display: flex;
+
+      &-jc-sb{
+         justify-content: space-between;
+      }
+      &-jc-c{
+         justify-content: center;
+      }
+
+      &-jc-sa{
+         justify-content: space-around;
+      }
+
+      &-ai-c{
+         align-items: center;
+      }
+   }
+
+   //Buttons
+   button, .button{
+      padding: 0.875rem 2.1875rem;
+      background: linear-gradient(to right, $limeGreen, $brightCyan);
+      border:0;
+      border-radius: 50px;
+      cursor: pointer;
+      color: $white;
+      font-weight: 400;
+      font-size: $font-sm;
+   }
+
+
+   //Visibility
+   .hide-for-mobile{ 
+      //hide for tablet and mobile
+      @include breakpoint-down(medium){
+         display: none;
+      }
+   }
+
+   .hide-for-desktop{
+      //hide for tablet and mobile
+      @include breakpoint-up(large){
+         display: none;
+      }
+   }
+

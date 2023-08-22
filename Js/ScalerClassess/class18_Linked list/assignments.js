@@ -71,9 +71,10 @@ class LinkedList {
       
         }
     }
-    print(){
+    print(head){
 
-        let curr = this.head;
+       // let curr = this.head;
+       let curr = head;
         let str = '';
         while(curr){
             str += curr.data;
@@ -394,7 +395,7 @@ class LinkedList {
         console.log(curr);
     }
 
-<<<<<<< HEAD
+
     cloneLL(){
         let curr = this.head;
         let map = new Map();
@@ -440,7 +441,7 @@ class LinkedList {
             }
             curr = curr.next;
         }
-=======
+    }
     getMid (){
         let idx = 0;
         let slow = this.head;
@@ -464,44 +465,92 @@ class LinkedList {
             curr = ahead;
         }
         return prev;
->>>>>>> f54133556f736ac8b35ec251edd5fa4123565af3
     }
+    cloneLLNew(){
+        let curr = ll1.head;
+        let ansLLHead=null;
+        let temp = null;
+        let map = new Map();
+        while(curr){
+            let newNode = new Node(curr.data);
+           //
+            if(!ansLLHead){
+                ansLLHead = newNode;
+                temp = newNode;
+            }else{
+                temp.next = newNode;
+                temp = temp.next;
+            }
+            map.add(curr, newNode);
+            curr = curr.next;
+        }
+       curr = ll1.head;
+       temp = ansLLHead;
+       while(curr){
+
+       }
+    }
+
+    reverseInBetween(A, B, C){
+        let count = 1;
+        let pt1 = A;
+        let pt2 = A;
+        while(count < B){
+            pt1 = pt1.next;
+            count++;
+        }
+        count = 1;
+        while(count < C){
+            pt2 = pt2.next;
+            count++;
+        }
+    
+        let prev = pt1;
+        let curr = pt1.next;
+        while(curr !== pt2){
+            let ahead = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = ahead;
+        }
+        prev.next = pt2;
+        return A;
+    }
+    
 }
 
 let ll1 = new LinkedList();
  ll1.insertAtFirst(1);
  ll1.insertAtEnd(2);
- ll1.insertAtEnd(2);
- ll1.insertAtEnd(2);
- ll1.insertAtEnd(4);
-<<<<<<< HEAD
- ll1.insertAtEnd(6);
+ ll1.insertAtEnd(11);
+ ll1.insertAtEnd(20);
+ ll1.insertAtEnd(14);
+ ll1.insertAtEnd(16);
  ll1.insertAtEnd(10);
  //console.log(ll1.head);
-//  ll1.print();
+ ll1.print(ll1.head);
+
+ //ll1.cloneLLNew();
 //  ll1.linkWithRandom();
+
+ll1.reverseInBetween(ll1.head, );
 
 
 //  ll1.cloneLL();
 //  ll1.printCloned();
-=======
  //ll1.insertAtEnd(10);
-ll1.print();
-let midNode = ll1.getMid();
+// ll1.print();
+// let midNode = ll1.getMid();
 
-let reverseHead = ll1.reverse_LL(midNode[0].next);
-midNode[0].next = reverseHead;
-ll1.print();
->>>>>>> f54133556f736ac8b35ec251edd5fa4123565af3
+// let reverseHead = ll1.reverse_LL(midNode[0].next);
+// midNode[0].next = reverseHead;
+// ll1.print();
 
 // ll1.createLoop();
 // ll1.printLoop();
  //ll1.getRandom();
-<<<<<<< HEAD
  //console.log(ll1.findMid());
-=======
  //
->>>>>>> f54133556f736ac8b35ec251edd5fa4123565af3
  //ll1.reverseInBetween(1, 4);
  //ll1.print();
  //console.log(ll1.checkIfPalindrome());

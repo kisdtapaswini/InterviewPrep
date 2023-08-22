@@ -96,5 +96,39 @@ we get a deeply nested doOperation() function, which is much harder to read and 
         
     // });
 }
-console.log(job("*"));
-  
+//console.log(job("*"));
+
+doA(function(){
+  doB();
+  doC(function(){
+    doD();
+  });
+  doE();
+});
+doF();
+
+function doA(eve){
+  console.log("A");
+  eve();
+}
+
+function doB(){
+  console.log("B");
+}
+
+function doC(eve){
+  console.log("C");
+  eve();
+
+}
+
+function doD(){
+  console.log("D");
+}
+
+function doE(){
+  console.log("E");
+}
+function doF(){
+  console.log("F");
+}

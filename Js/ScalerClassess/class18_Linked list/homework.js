@@ -39,3 +39,75 @@ function findKthElem(A, B){
         count++;
     }
 }
+
+//Q1. Remove Nth Node from List End
+
+function removeNthFromEnd(A, B){
+    let pt1, pt2;
+    pt1, pt2 = A;
+    let count = 1;
+    while(count < B){
+        count++;
+        pt1 = pt1.next;
+        if(!pt1){
+            return A.next;
+        }
+    }
+    let prev = null;
+    while(pt1 && pt1.next){
+        pt1 = pt1.next;
+        prev = pt2;
+        pt2 = pt2.next;
+    }
+
+    if(!prev){
+        return A.next;
+    }
+    prev.next = pt2.next;
+    return A;
+}
+
+//removeNthFromEnd(head, 2)
+
+//Q2. Remove Duplicates from Sorted List
+
+function removeDuplicateLL(A){
+    let p1 = A;
+    let p2 = A.next;
+    while(p2){
+        if(p1.data === p2.data){
+            p1.next =p2.next;
+        }else{
+            p1 = p2;
+        }
+        p2 = p2.next;
+    }
+}
+
+//Q4. Reverse Link List II
+function reverseInBetween(A, B, C){
+    let count = 1;
+    let tmp1 = A;
+    let tmp2 = A;
+    let curr = A;
+    let prev = null;
+
+    while(count < B){
+        tmp1 = curr;
+        curr = curr.next;
+        count++;
+    }
+
+    tmp2 = curr;
+    while(B <= C){
+        let ahead = curr.next;
+        curr.next = prev;
+        prev = curr;
+        curr = ahead;
+        B++;
+    }
+
+    tmp2.next = curr;
+    tmp1.next = prev;
+    return A;
+}
