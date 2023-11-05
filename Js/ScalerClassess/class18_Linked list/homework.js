@@ -111,3 +111,7 @@ function reverseInBetween(A, B, C){
     tmp1.next = prev;
     return A;
 }
+
+//Q3. K reverse linked list
+
+

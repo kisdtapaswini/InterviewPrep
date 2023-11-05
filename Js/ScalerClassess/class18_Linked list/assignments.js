@@ -516,24 +516,92 @@ class LinkedList {
         prev.next = pt2;
         return A;
     }
-    
+
+    printGroups(head, B){
+        let curr = head;
+        if(!curr){
+            return;
+        }
+        let count = 0;
+        let prev = null;
+        while(curr && count < B){
+           let ahead = curr.next;
+           curr.next = prev;
+           prev = curr;
+           curr = ahead;
+            count++;
+        }
+        head.next = curr;
+        this.printGroups(curr, B);
+    }
+
+    createLoop2(){
+        let curr = ll2.head;
+        let node3 = null;
+        let node10 = null;
+        while(curr){
+            if(curr.data === 3){
+                node3 = curr;
+            }
+            if(curr.data === 10){
+                node10 = curr;
+            }
+            curr = curr.next;
+        }
+        node10.next = node3;
+    }
+    detectCycle2UsingMap(){
+       let curr = ll2.head;
+        let set = new Set();
+        let loopNode = null;
+        while(curr){
+            if(set.has(curr.data)){
+                return loopNode;
+            }
+            set.add(curr.data);
+            loopNode = curr;
+            curr = curr.next;
+        }
+        console.log(set);
+       // console.log(curr.data);
+    }
+
+    detectLLCycleUsingSlowFast(){
+        let curr = ll2.head;
+        let slow = curr;
+        let fast = curr;
+        while(slow != fast){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        slow =  A;
+        while(slow != fast){
+            slow = slow.next;
+            prev = fast;
+            fast = fast.next.next;
+        }
+        prev.next = null;
+        return ll2.head;
+    }
 }
 
 let ll1 = new LinkedList();
  ll1.insertAtFirst(1);
  ll1.insertAtEnd(2);
  ll1.insertAtEnd(11);
- ll1.insertAtEnd(20);
  ll1.insertAtEnd(14);
  ll1.insertAtEnd(16);
  ll1.insertAtEnd(10);
  //console.log(ll1.head);
- ll1.print(ll1.head);
+ //ll1.print(ll1.head);
+ 
+ //ll1.printGroups(ll1.head, 2);
+ //ll1.print(ll1.head);
 
  //ll1.cloneLLNew();
 //  ll1.linkWithRandom();
 
-ll1.reverseInBetween(ll1.head, );
+//ll1.reverseInBetween(ll1.head, );
 
 
 //  ll1.cloneLL();
@@ -587,3 +655,17 @@ ll1.reverseInBetween(ll1.head, );
 //ll1.callPrintReverse();
 //Q5. Print Reverse Linked List
 
+let ll2 = new LinkedList();
+ll2.insertAtFirst(1);
+ll2.insertAtEnd(2);
+ll2.insertAtEnd(3);
+ll2.insertAtEnd(5);
+ll2.insertAtEnd(6);
+ll2.insertAtEnd(10);
+
+ll2.createLoop2();
+//let ans = ll2.detectCycle2();
+//console.log(ans.data);
+
+let ans = ll2.detectLLCycleUsingSlowFast();
+console.log(ans.data);
