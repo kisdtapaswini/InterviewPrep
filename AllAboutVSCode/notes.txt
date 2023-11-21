@@ -1,0 +1,8 @@
+1. Emmet
+https://medium.com/@kartik2406/web-development-with-vs-code-part-1-emmet-6af80f0f630c
+2. Prettier setting
+3. Useful shortcuts
+4. Extensions for React App
+5. Setting.json
+6. Debug
+7. es7 react snippets
